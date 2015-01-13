@@ -1,0 +1,34 @@
+(function ($) {
+	$.fn.nameBadge = function (options) {
+		var settings = $.extend({
+			border: {
+				color: '#ddd',
+				width: 3
+			},
+			colors: ['#a3a948', '#edb92e', '#f85931', '#ce1836', '#009989'],
+			text: '#fff',
+			size: 72,
+			margin: 5
+		}, options);
+		return this.each(function () {
+			var elementText = $(this).text();
+			var initialLetters = elementText.match(/\b(\w)/g);
+			var initials = initialLetters.join('');
+			$(this).text(initials);
+			$(this).css({
+				'color': settings.text,
+				'background-color': settings.colors[Math.floor(Math.random() * settings.colors.length)],
+				'border': settings.border.width + 'px solid ' + settings.border.color,
+				'display': 'inline-block',
+				'font-family': 'Arial, \'Helvetica Neue\', Helvetica, sans-serif',
+				'font-size': settings.size * 0.4,
+				'border-radius': settings.size + 'px',
+				'width': settings.size + 'px',
+				'height': settings.size + 'px',
+				'line-height': settings.size + 'px',
+				'margin': settings.margin + 'px',
+				'text-align': 'center'
+			});
+		});
+	};
+}(jQuery));
