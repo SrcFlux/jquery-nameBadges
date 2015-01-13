@@ -6,8 +6,8 @@ This plugin turns elements like this:
 ```html
 <div class="name">Bill Gates</div>
 ```
-Into something like this:
-![Example1](https://raw.githubusercontent.com/SrcFlux/jquery-nameBadges/master/examples/example0.png)
+Into something like this:  
+![Example0](https://raw.githubusercontent.com/SrcFlux/jquery-nameBadges/master/examples/example0.png)
 
 ### Usage
 #### With default settings:
