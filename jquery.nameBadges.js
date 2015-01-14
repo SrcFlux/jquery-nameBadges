@@ -8,11 +8,14 @@
 			colors: ['#a3a948', '#edb92e', '#f85931', '#ce1836', '#009989'],
 			text: '#fff',
 			size: 72,
-			margin: 5
+			margin: 5,
+			middlename: true,
+			uppercase: false
 		}, options);
 		return this.each(function () {
 			var elementText = $(this).text();
 			var initialLetters = elementText.match(/\b(\w)/g);
+			settings.middlename ? true : initialLetters = [initialLetters[0], initialLetters[initialLetters.length-1]];
 			var initials = initialLetters.join('');
 			$(this).text(initials);
 			$(this).css({
@@ -27,7 +30,8 @@
 				'height': settings.size + 'px',
 				'line-height': settings.size + 'px',
 				'margin': settings.margin + 'px',
-				'text-align': 'center'
+				'text-align': 'center',
+				'text-transform' : settings.uppercase ? 'uppercase' : ''
 			});
 		});
 	};
