@@ -14,8 +14,7 @@
 		}, options);
 		return this.each(function () {
 			var elementText = $(this).text();
-			var initialLetters = elementText.match(/\b(\w)/g);
-			settings.middlename ? true : initialLetters = [initialLetters[0], initialLetters[initialLetters.length-1]];
+			var initialLetters = elementText.match(settings.middlename ? /\b(\w)/g : /^\w|\b\w(?=\S+$)/g);
 			var initials = initialLetters.join('');
 			$(this).text(initials);
 			$(this).css({
